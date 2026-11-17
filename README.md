@@ -89,18 +89,55 @@ lib/
 
 ---
 
-## ▶️ Como executar (Android Studio)
+## 🔐 Permissões configuradas (Android & iOS)
+
+### Android (`android/app/src/main/AndroidManifest.xml`)
+
+Configuradas dentro da tag `<manifest>` (sem o atributo depreciado `package`, utilizando `namespace = "com.example.geodiario"` no Gradle `android/app/build.gradle.kts`):
+
+```xml
+<!-- Permissões de Câmera e Galeria (retrocompatível até Android 12) -->
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission
+    android:name="android.permission.READ_EXTERNAL_STORAGE"
+    android:maxSdkVersion="32" />
+
+<!-- Permissões de GPS / Geolocalização -->
+<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+```
+
+### iOS (`ios/Runner/Info.plist`)
+
+Chaves de privacidade obrigatórias configuradas:
+- `NSCameraUsageDescription` — justificativa de acesso à câmera.
+- `NSPhotoLibraryUsageDescription` — justificativa de acesso à galeria.
+- `NSLocationWhenInUseUsageDescription` — justificativa de acesso ao GPS durante o uso.
+
+---
+
+## 📲 Download direto do APK (Android)
+
+O projeto possui build contínuo via **GitHub Actions** (`.github/workflows/build-apk.yml`) que executa `flutter analyze`, `flutter test` e gera o pacote Android:
+
+- 👉 **[Baixar última versão do GeoDiário (`app-release.apk`)](https://github.com/hipolitopeedro/geodiario/releases/latest/download/app-release.apk)**
+
+---
+
+## ▶️ Como executar (Android Studio / Celular físico)
 
 Pré-requisitos: **Flutter SDK** instalado e **Android Studio** com os plugins **Flutter** e **Dart**.
 
 1. No Android Studio: **File → Open…** e selecione a pasta `geodiario`.
 2. Clique em **Pub get** (ou execute `flutter pub get` no terminal).
-3. Selecione um emulador ou celular Android e clique em **Run ▶**.
+3. Conecte seu celular Android via **Depuração USB** (ou **Depuração por Wi-Fi**) ou inicie um emulador e clique em **Run ▶**.
 
 Ou pelo terminal:
 
 ```bash
 flutter pub get
+flutter analyze
+flutter test
 flutter run
 ```
 
@@ -108,9 +145,21 @@ flutter run
 
 ---
 
+## ✅ Checklist de testes manuais
+
+- [ ] Cadastro completo com fotografia, título, descrição, data/hora e coordenadas GPS.
+- [ ] Validação de título obrigatório e fotografia obrigatória antes de salvar.
+- [ ] Tratamento de GPS desligado ou permissão negada (opção de tentar novamente ou salvar sem coordenadas).
+- [ ] Exibição dos registros em galeria na tela inicial com atualização por *pull-to-refresh*.
+- [ ] Abertura da tela de detalhes com foto ampliável (zoom em tela cheia), data formatada e latitude/longitude.
+- [ ] Exclusão com diálogo de confirmação removendo tanto o registro no SQLite quanto o arquivo `.jpg` local.
+- [ ] Persistência dos dados e imagens após fechar e reabrir o aplicativo.
+
+---
+
 ## 📸 Capturas de tela
 
-> _Adicionar aqui as capturas das telas principais (galeria, novo registro e detalhes)._
+> _Adicionar na pasta `screenshots/` as capturas das telas principais após os testes no dispositivo._
 
 | Galeria | Novo registro | Detalhes |
 |---|---|---|
