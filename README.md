@@ -6,7 +6,8 @@ A ideia é simples e prática: tirar uma foto pela câmera, dar um título (e um
 
 ## Informações acadêmicas
 
-- Autor: Pedro Hipólito
+- Autor: Pedro Henrique Vieira Hipólito
+- Matrícula: D25213
 - Curso: Ciência da Computação — Escola Superior Dom Helder Câmara
 - Disciplina: Desenvolvimento para Dispositivos Móveis
 
@@ -154,7 +155,7 @@ flutter run
 
 ## Capturas de tela
 
-Abaixo estão as telas principais testadas diretamente em um aparelho Android físico (com direito a modelo fotográfico colaborando para o teste de câmera e GPS):
+Abaixo estão as telas principais testadas diretamente em um aparelho Android físico:
 
 | Tela inicial (Galeria) | Novo registro (Câmera + GPS) | Detalhes do registro |
 |---|---|---|
@@ -171,7 +172,3 @@ Abaixo estão as telas principais testadas diretamente em um aparelho Android f�
 - [X] Persistência dos registros e das imagens após fechar e reabrir o aplicativo no aparelho.
 - [X] Validação estática (`flutter analyze --no-fatal-infos`) e teste unitário (`flutter test`) sem erros.
 
-## Observações
-
-- Todos os dados permanecem armazenados localmente no dispositivo; o trabalho não requer autenticação nem sincronização em nuvem.
-- A obtenção das coordenadas depende de o serviço de localização (GPS) do aparelho estar ativo e autorizado pelo usuário no momento da captura.
