@@ -161,6 +161,12 @@ Abaixo estão as telas principais testadas diretamente em um aparelho Android f�
 |---|---|---|
 | <img src="screenshots/home.jpg" width="260" alt="Tela inicial do GeoDiário" /> | <img src="screenshots/cadastro.jpg" width="260" alt="Tela de novo registro do GeoDiário" /> | <img src="screenshots/detalhes.jpg" width="260" alt="Tela de detalhes do GeoDiário" /> |
 
+Fluxo de exclusão validando a confirmação antes de apagar e a atualização automática da galeria (com remoção tanto no SQLite quanto do arquivo de imagem local):
+
+| Confirmação de exclusão | Galeria atualizada após exclusão |
+|---|---|
+| <img src="screenshots/exclusao_confirmacao.jpg" width="260" alt="Diálogo de confirmação de exclusão" /> | <img src="screenshots/exclusao_concluida.jpg" width="260" alt="Galeria após exclusão do registro" /> |
+
 ## Checklist de testes manuais
 
 - [X] Cadastro completo com fotografia pela câmera, título, data/hora automática e coordenadas GPS.
