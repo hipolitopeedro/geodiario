@@ -161,7 +161,6 @@ Abaixo estão as telas principais testadas diretamente em um aparelho Android f�
 |---|---|---|
 | <img src="screenshots/home.jpg" width="260" alt="Tela inicial do GeoDiário" /> | <img src="screenshots/cadastro.jpg" width="260" alt="Tela de novo registro do GeoDiário" /> | <img src="screenshots/detalhes.jpg" width="260" alt="Tela de detalhes do GeoDiário" /> |
 | Confirmação de exclusão | Galeria atualizada após exclusão |
-|---|---|
 | <img src="screenshots/exclusao_confirmacao.jpg" width="260" alt="Diálogo de confirmação de exclusão" /> | <img src="screenshots/exclusao_concluida.jpg" width="260" alt="Galeria após exclusão do registro" /> |
 
 ## Checklist de testes manuais
